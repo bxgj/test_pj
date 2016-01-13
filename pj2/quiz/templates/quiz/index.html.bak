@@ -1,0 +1,3 @@
+{% for q in question_list %}
+{{q}}
+{% endfor %}
