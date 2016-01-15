@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from quiz.views import QuestionList
+from quiz.views import QuestionList,QuestionDetail
 
 urlpatterns = [
     url(r'^quiz/$', QuestionList.as_view(),name='index'),
-    url(r'^quiz/(?P<qid>[\d+])/$', 'quiz.views.detail',name='detail'),
+    url(r'^quiz/(?P<pk>[0-9]+)$', QuestionDetail.as_view(),name='detail'),
+    #url(r'^quiz/(?P<qid>[\d+])/$', 'quiz.views.detail',name='detail'),
     #url(r'', 'quiz.views.index',name='index')
 ]
